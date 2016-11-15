@@ -1,0 +1,16 @@
+.nyc_output
+coverage
+intl/zz
+!intl/en/
+node_modules
+npm-debug.log
+package
+server.pid
+tap.out
+test/SANDBOX
+test/my-server/log
+test/fixtures/fake-wlpn/member1
+test/usr/file.dat
+test/usr/member1/package
+test/usr/member2/package
+test/usr/member3

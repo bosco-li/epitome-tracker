@@ -1,0 +1,36 @@
+{
+  "name": "repo-stats",
+  "version": "0.0.1",
+  "description": "Statistics for Team Epitome",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore ./",
+    "test": "tap ./test/test-*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bosco-li/repo-stats.git"
+  },
+  "keywords": [
+    "epitome",
+    "loopback",
+    "github",
+    "issues",
+    "tracker"
+  ],
+  "author": "Bosco Li <boscoli@ca.ibm.com>, Phong Thieu <pthieu@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/bosco-li/repo-stats/issues"
+  },
+  "homepage": "https://github.com/bosco-li/repo-stats#readme",
+  "devDependencies": {
+    "eslint": "^3.10.1",
+    "eslint-config-strongloop": "^2.1.0",
+    "tap": "^8.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "lodash": "^4.17.1"
+  }
+}
