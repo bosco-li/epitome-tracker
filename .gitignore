@@ -18,3 +18,4 @@ coverage
 data.json
 node_modules
 npm-debug.log
+tokens.js
