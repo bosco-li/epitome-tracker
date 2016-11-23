@@ -10,16 +10,28 @@
       "type": "string",
       "required": true
     },
-    "url": {
+    "full_name": {
       "type": "string",
       "required": true
+    },
+    "html_url": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
     },
     "snap_ts": {
       "type": "date",
       "required": true
     },
-    "issues": {
-      "type": "object",
+    "open_issues": {
+      "type": "number",
+      "required": true
+    },
+    "owner": {
+      "type": "string",
       "required": true
     }
   },
