@@ -1,7 +1,8 @@
 'use strict';
 
-var loopback = require('loopback');
 var boot = require('loopback-boot');
+var loopback = require('loopback');
+var path = require('path');
 
 var app = module.exports = loopback();
 
@@ -22,8 +23,10 @@ app.start = function() {
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
   if (err) throw err;
-
+  app.use(loopback.static(path.join(__dirname, '..')));
   // start the server if `$ node server.js`
-  if (require.main === module)
+  if (require.main === module) {
     app.start();
+  }
+
 });
