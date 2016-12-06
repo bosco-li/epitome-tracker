@@ -33,6 +33,30 @@
     "owner": {
       "type": "string",
       "required": true
+    },
+    "sprint_start_ts": {
+      "type": "date",
+      "required": true
+    },
+    "sprint_end_ts": {
+      "type": "date",
+      "required": true
+    },
+    "new_issues": {
+      "type": "number",
+      "required": true
+    },
+    "closed_issues": {
+      "type": "number",
+      "required": true
+    },
+    "open_prs": {
+      "type": "number",
+      "required": true
+    },
+    "new_prs": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

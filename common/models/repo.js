@@ -8,6 +8,7 @@ var gh = require('../../lib/github');
 var CURRENT_STATE;
 
 module.exports = function(Repo) {
+
   Repo.getStatus = function(cb) {
     cb = cb || function() {};
     var self = this;
@@ -15,36 +16,27 @@ module.exports = function(Repo) {
       getRepos,
       jenkins.getAllBuildStatus,
     ], function(err, results) {
-      // results[0] = is a list of all repos with issues
-      // results[1] = jenkins results
       results = _.map(results[0], function(repo) {
         return _.assign(repo, _.find(results[1], {
           name: repo.name,
         }));
       });
-
-      // var noBuilds = _
-      //   .chain(results)
-      //   .filter(function(repo) {
-      //     return !repo.hasOwnProperty('status');
-      //   })
-      //   .map(function(repo) {
-      //     return repo.name;
-      //   })
-      //   .value();
-
       async.concat(results, function(repo, cb) {
         repo['snap_ts'] = new Date();
         return cb(null, repo);
       }, function(err, results) {
         CURRENT_STATE = results;
-        console.log(results);
+        // console.log(results);
         return cb(null, results);
       });
     });
   };
 
   Repo.status = function(cb) {
+    var self = this;
+    if (!CURRENT_STATE) {
+      return self.getStatus(cb);
+    }
     return cb(null, CURRENT_STATE);
   };
 
@@ -69,8 +61,8 @@ function getRepos(cb) {
 function getIssues(repos, cb) {
   async.waterfall([
     gh.getAllRepos,
-    function(repos, cb) {
-      async.concat(repos, gh.getIssues, cb);
+    function(repo, cb) {
+      async.concat(repo, gh.getIssues, cb);
     },
   ], cb);
 }
