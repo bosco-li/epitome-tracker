@@ -23,7 +23,7 @@ app.start = function() {
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
   if (err) throw err;
-  app.use(loopback.static(path.join(__dirname, '..')));
+  app.use(loopback.static(path.join(__dirname, '..', 'ui')));
   // start the server if `$ node server.js`
   if (require.main === module) {
     app.start();
