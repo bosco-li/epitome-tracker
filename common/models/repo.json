@@ -34,29 +34,26 @@
       "type": "string",
       "required": true
     },
-    "sprint_start_ts": {
-      "type": "date",
-      "required": true
-    },
-    "sprint_end_ts": {
-      "type": "date",
-      "required": true
-    },
     "new_issues": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "closed_issues": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "open_prs": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "new_prs": {
-      "type": "number",
-      "required": true
+      "type": "number"
+    },
+    "sprint_start_ts": {
+      "type": "date"
+    },
+    "sprint_end_ts": {
+      "type": "date"
+    },
+    "current_sprint": {
+      "type": "number"
     }
   },
   "validations": [],

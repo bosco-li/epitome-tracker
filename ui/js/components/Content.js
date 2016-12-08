@@ -21,7 +21,7 @@ export default class Content extends React.Component {
     return (
       <div>
         <div class="page-header">
-          <h1>Sprint 1</h1>
+          <h1>Current Sprint Summary</h1>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -29,9 +29,10 @@ export default class Content extends React.Component {
               <thead>
                 <tr>
                   <th>Repos</th>
-                  <th>Opened</th>
-                  <th>Closed</th>
-                  <th>Arrival</th>
+                  <th>Opened Issues</th>
+                  <th>Closed Issues</th>
+                  <th>New Issues</th>
+                  <th>New PRs</th>
                 </tr>
               </thead>
               <tbody>
@@ -40,8 +41,9 @@ export default class Content extends React.Component {
                       <tr>
                         <td>{result.name}</td>
                         <td>{result.open_issues}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{result.closed_issues}</td>
+                        <td>{result.new_issues}</td>
+                        <td>{result.new_prs}</td>
                       </tr>
                     )
                   }
